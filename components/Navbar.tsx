@@ -1,9 +1,10 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +14,7 @@ export default function Navbar() {
       // Hide navbar when scrolling down past first page
       if (currentScrollY > windowHeight && currentScrollY > lastScrollY) {
         setIsVisible(false);
-      } 
+      }
       // Show navbar when scrolling up
       else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
@@ -22,69 +23,80 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#f5f1eb] px-6 py-5 border-b border-gray-200 transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#f5f1eb] px-4 md:px-6 py-4 md:py-5 border-b border-gray-200 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            className="text-orange-500"
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="text-orange-500 md:w-6 md:h-6"
           >
-            <path 
-              d="M12 2L2 7L12 12L22 7L12 2Z" 
-              fill="currentColor"
-            />
-            <path 
-              d="M2 17L12 22L22 17" 
-              stroke="currentColor" 
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" />
+            <path
+              d="M2 17L12 22L22 17"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <path 
-              d="M2 12L12 17L22 12" 
-              stroke="currentColor" 
+            <path
+              d="M2 12L12 17L22 12"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
-          <span className="text-2xl font-serif text-gray-900">Yoga Flow</span>
+          <span className="text-lg md:text-2xl font-serif text-gray-900">
+            Yoga Flow
+          </span>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex items-center gap-12">
-          <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg">
+        {/* Navigation Links - Desktop */}
+        <div className="hidden lg:flex items-center gap-12">
+          <a
+            href="#"
+            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
+          >
             Home
           </a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg">
+          <a
+            href="#"
+            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
+          >
             Classes
           </a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg">
+          <a
+            href="#"
+            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
+          >
             Teachers
           </a>
-          <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg">
+          <a
+            href="#"
+            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
+          >
             About Us
           </a>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex items-center gap-4">
+        {/* CTA Buttons - Desktop */}
+        <div className="hidden lg:flex items-center gap-4">
           <button className="px-8 py-3 bg-[#f0dcc8] text-gray-900 rounded-full font-light text-base hover:bg-[#e8d4be] transition-colors">
             Start Free Trial
           </button>
@@ -92,7 +104,70 @@ export default function Navbar() {
             Join Our Classes
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-gray-900 transition-transform ${
+              isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-900 transition-opacity ${
+              isMobileMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-900 transition-transform ${
+              isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+          <div className="flex flex-col gap-4">
+            <a
+              href="#"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
+            >
+              Classes
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
+            >
+              Teachers
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
+            >
+              About Us
+            </a>
+            <div className="flex flex-col gap-3 mt-2">
+              <button className="w-full px-6 py-3 bg-[#f0dcc8] text-gray-900 rounded-full font-light text-sm hover:bg-[#e8d4be] transition-colors">
+                Start Free Trial
+              </button>
+              <button className="w-full px-6 py-3 bg-[#ff8c42] text-white rounded-full font-light text-sm hover:bg-[#ff7a28] transition-colors">
+                Join Our Classes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
