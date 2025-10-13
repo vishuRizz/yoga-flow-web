@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <h1 className="text-6xl font-bold text-black mb-6 leading-tight" style={{ fontFamily: 'serif' }}>
             Train with<br />
-            Rishikesh's Best<br />
+            Rishikesh 's Best<br />
             Yoga Teachers –<br />
             Online.
           </h1>

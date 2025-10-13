@@ -26,7 +26,7 @@ export default function About() {
               Rooted in Rishikesh
             </h3>
             <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'serif' }}>
-              Experience authentic yoga from the heart of Rishikesh, the world's yoga capital.
+              Experience authentic yoga from the heart of Rishikesh, the world s yoga capital.
             </p>
           </div>
 

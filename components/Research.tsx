@@ -15,7 +15,7 @@ export default function Research() {
         </div>
         
         <p className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-4xl mx-auto" style={{ fontFamily: 'serif' }}>
-          Yoga Flow's evidence-based program has helped over 5,000 urban professionals completely reverse health issues in just 24 weeks.
+          Yoga Flow evidence-based program has helped over 5,000 urban professionals completely reverse health issues in just 24 weeks.
         </p>
       </div>
     </section>
