@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -14,7 +15,7 @@ export default function Hero() {
           >
             Train with
             <br />
-            Rishikesh s Best
+            Rishikesh&apos;s Best
             <br />
             Yoga Teachers –<br />
             Online.
@@ -30,12 +31,18 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
-            <button className="px-6 sm:px-9 py-3 sm:py-3.5 bg-[#ff8c42] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#ff7a28] transition-colors">
+            <Link
+              href="/classes"
+              className="px-6 sm:px-9 py-3 sm:py-3.5 bg-[#ff8c42] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#ff7a28] transition-colors text-center"
+            >
               Join Our Classes
-            </button>
-            <button className="px-6 sm:px-9 py-3 sm:py-3.5 bg-transparent border-2 border-[#ff8c42] text-[#ff8c42] rounded-full text-sm sm:text-base font-medium hover:bg-[#ff8c42] hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/contact"
+              className="px-6 sm:px-9 py-3 sm:py-3.5 bg-transparent border-2 border-[#ff8c42] text-[#ff8c42] rounded-full text-sm sm:text-base font-medium hover:bg-[#ff8c42] hover:text-white transition-colors text-center"
+            >
               Start Free Trial
-            </button>
+            </Link>
           </div>
         </div>
       </div>

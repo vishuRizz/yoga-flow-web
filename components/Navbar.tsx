@@ -1,10 +1,27 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Classes", href: "/classes" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname?.startsWith(href) ?? false;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,30 +86,19 @@ export default function Navbar() {
 
         {/* Navigation Links - Desktop */}
         <div className="hidden lg:flex items-center gap-12">
-          <a
-            href="#"
-            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
-          >
-            Classes
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
-          >
-            Teachers
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-gray-900 transition-colors font-light text-lg"
-          >
-            About Us
-          </a>
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`transition-colors font-light text-lg ${
+                isActive(item.href)
+                  ? "text-[#ff8c42]"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         {/* CTA Buttons - Desktop */}
@@ -133,30 +139,20 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
           <div className="flex flex-col gap-4">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
-            >
-              Classes
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
-            >
-              Teachers
-            </a>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-light text-base"
-            >
-              About Us
-            </a>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`transition-colors font-light text-base ${
+                  isActive(item.href)
+                    ? "text-[#ff8c42]"
+                    : "text-gray-700 hover:text-gray-900"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
             <div className="flex flex-col gap-3 mt-2">
               <button className="w-full px-6 py-3 bg-[#f0dcc8] text-gray-900 rounded-full font-light text-sm hover:bg-[#e8d4be] transition-colors">
                 Start Free Trial

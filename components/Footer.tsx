@@ -1,7 +1,15 @@
-import React from 'react';
-import { Instagram, Facebook, Twitter } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Classes", href: "/classes" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
     <footer className="bg-[#f5f1eb] border-t border-gray-200">
       {/* Top Section */}
@@ -40,21 +48,15 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <nav className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base">
-              Home
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base">
-              Classes
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base">
-              Teachers
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base">
-              About Us
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base">
-              Contact
-            </a>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-gray-600 hover:text-gray-900 transition-colors font-light text-base"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           {/* Social Icons */}
