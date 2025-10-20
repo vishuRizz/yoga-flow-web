@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+
+const zoomLaunchUrl = "https://zoom.us/join";
 
 const liveClasses = [
   {
@@ -11,6 +13,7 @@ const liveClasses = [
     instructor: "Priya Sharma",
     level: "Beginner",
     duration: "60 min",
+    joinUrl: zoomLaunchUrl,
   },
   {
     time: "9:30 AM",
@@ -18,6 +21,7 @@ const liveClasses = [
     instructor: "Arjun Verma",
     level: "Intermediate",
     duration: "75 min",
+    joinUrl: zoomLaunchUrl,
   },
   {
     time: "11:00 AM",
@@ -25,20 +29,23 @@ const liveClasses = [
     instructor: "Divya Kapoor",
     level: "All Levels",
     duration: "45 min",
+    joinUrl: zoomLaunchUrl,
   },
   {
     time: "5:00 PM",
     title: "Ashtanga Yoga",
-    instructor: "Rohan Singh",
+    instructor: "Pawan Deep Negi",
     level: "Advanced",
     duration: "90 min",
+    joinUrl: zoomLaunchUrl,
   },
   {
     time: "6:30 PM",
     title: "Yin Yoga",
-    instructor: "Meera Patel",
+    instructor: "Aradhna Uniyal",
     level: "All Levels",
     duration: "60 min",
+    joinUrl: zoomLaunchUrl,
   },
 ];
 
@@ -61,11 +68,109 @@ const recordedClasses = [
     duration: "50 min",
     instructor: "Divya Kapoor",
   },
+  {
+    title: "Strength Foundations",
+    focus: "Power & Alignment",
+    duration: "40 min",
+    instructor: "Pawan Deep Negi",
+  },
+  {
+    title: "Moonlight Yin",
+    focus: "Stillness & Breath",
+    duration: "45 min",
+    instructor: "Aradhna Uniyal",
+  },
 ];
 
 export default function ClassSchedule() {
   const [activeTab, setActiveTab] = useState<"live" | "recorded">("live");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoadingPayment, setIsLoadingPayment] = useState(false);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
   const isLive = activeTab === "live";
+
+  const loadRazorpayScript = useCallback(async () => {
+    if (typeof window === "undefined") return false;
+
+    const existingScript = document.getElementById("razorpay-checkout-script");
+    if (existingScript) return true;
+
+    return new Promise<boolean>((resolve) => {
+      const script = document.createElement("script");
+      script.id = "razorpay-checkout-script";
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  }, []);
+
+  const handleSubscribe = useCallback(async () => {
+    if (isSubscribed || isLoadingPayment) return;
+
+    setPaymentError(null);
+    setIsLoadingPayment(true);
+
+    const scriptLoaded = await loadRazorpayScript();
+    if (!scriptLoaded || !window.Razorpay) {
+      setPaymentError("Unable to load payment gateway. Please try again.");
+      setIsLoadingPayment(false);
+      return;
+    }
+
+    const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+    if (!keyId) {
+      setPaymentError("Payment gateway is not configured. Please contact support.");
+      setIsLoadingPayment(false);
+      return;
+    }
+
+    const razorpay = new window.Razorpay({
+      key: keyId,
+      amount: 49900,
+      currency: "INR",
+      name: "Yoga Flow Membership",
+      description: "Monthly subscription",
+      handler: () => {
+        setIsSubscribed(true);
+        setIsLoadingPayment(false);
+      },
+      prefill: {
+        name: "",
+        email: "",
+        contact: "",
+      },
+      notes: {
+        source: "Yoga Flow Classes Page",
+      },
+      theme: {
+        color: "#ff8c42",
+      },
+      modal: {
+        ondismiss: () => {
+          setIsLoadingPayment(false);
+        },
+      },
+    });
+
+    razorpay.on("payment.failed", () => {
+      setPaymentError("Payment was not completed. Please try again.");
+      setIsLoadingPayment(false);
+    });
+
+    try {
+      razorpay.open();
+    } catch {
+      setPaymentError("Unable to initiate payment. Please try again.");
+      setIsLoadingPayment(false);
+    }
+  }, [isLoadingPayment, isSubscribed, loadRazorpayScript]);
+
+  const subscribeLabel = isSubscribed
+    ? "Subscribed"
+    : isLoadingPayment
+    ? "Processing..."
+    : "Subscribe";
 
   return (
     <section className="bg-white/70 backdrop-blur-sm border border-[#f0dcc8] rounded-3xl p-8 md:p-10 shadow-sm">
@@ -87,29 +192,59 @@ export default function ClassSchedule() {
           </p>
         </div>
 
-        <div className="inline-flex items-center gap-6 border-b border-[#f6dcc1] pb-2">
-          <button
-            type="button"
-            onClick={() => setActiveTab("live")}
-            className={`text-sm md:text-base font-medium pb-2 transition-colors ${
-              activeTab === "live"
-                ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
-                : "text-gray-400 hover:text-gray-600"
-            }`}
-          >
-            Live Classes
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("recorded")}
-            className={`text-sm md:text-base font-medium pb-2 transition-colors ${
-              activeTab === "recorded"
-                ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
-                : "text-gray-400 hover:text-gray-600"
-            }`}
-          >
-            Recorded Classes
-          </button>
+        <div className="flex flex-col items-stretch sm:items-end gap-3">
+          <div className="inline-flex items-center gap-6 border-b border-[#f6dcc1] pb-2">
+            <button
+              type="button"
+              onClick={() => setActiveTab("live")}
+              className={`text-sm md:text-base font-medium pb-2 transition-colors ${
+                activeTab === "live"
+                  ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+            >
+              Live Classes
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab("recorded")}
+              className={`text-sm md:text-base font-medium pb-2 transition-colors ${
+                activeTab === "recorded"
+                  ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+            >
+              Recorded Classes
+            </button>
+          </div>
+
+          <div className="flex flex-col items-stretch gap-2">
+            <button
+              type="button"
+              onClick={handleSubscribe}
+              disabled={isSubscribed || isLoadingPayment}
+              className="rounded-full bg-[#ff8c42] px-5 py-2 text-sm md:text-base font-medium text-white shadow-sm transition-colors hover:bg-[#ff7a28] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {subscribeLabel}
+            </button>
+            {isSubscribed ? (
+              <p
+                className="text-xs text-green-600 text-center"
+                style={{ fontFamily: "serif" }}
+              >
+                Subscription active. See you on the mat!
+              </p>
+            ) : (
+              paymentError && (
+                <p
+                  className="text-xs text-red-600 text-center"
+                  style={{ fontFamily: "serif" }}
+                >
+                  {paymentError}
+                </p>
+              )
+            )}
+          </div>
         </div>
       </div>
 
@@ -157,12 +292,14 @@ export default function ClassSchedule() {
                     <td className="px-6 py-4">{classItem.level}</td>
                     <td className="px-6 py-4">{classItem.duration}</td>
                     <td className="px-6 py-4 text-right">
-                      <Link
-                        href="/contact"
+                      <a
+                        href={classItem.joinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-[#ff8c42] font-medium hover:underline"
                       >
                         Join
-                      </Link>
+                      </a>
                     </td>
                   </tr>
                 ))}

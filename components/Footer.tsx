@@ -6,6 +6,7 @@ export default function Footer() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Classes", href: "/classes" },
+    { label: "Teachers", href: "/teachers" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
