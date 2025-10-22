@@ -4,7 +4,6 @@ import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
-import FreeTrialModal from "./FreeTrialModal";
 
 export default function Hero() {
   const router = useRouter();
@@ -90,7 +89,7 @@ export default function Hero() {
       setPaymentError("Unable to initiate payment. Please try again.");
       setIsLoadingPayment(false);
     }
-  }, [isLoadingPayment, loadRazorpayScript, router]);
+  }, [loadRazorpayScript, router]);
 
   return (
     <>

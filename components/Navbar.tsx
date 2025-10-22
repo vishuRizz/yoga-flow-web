@@ -127,7 +127,7 @@ export default function Navbar() {
       setPaymentError("Unable to initiate payment. Please try again.");
       setIsLoadingPayment(false);
     }
-  }, [isLoadingPayment, loadRazorpayScript, router]);
+  }, [loadRazorpayScript, router]);
 
   return (
     <>

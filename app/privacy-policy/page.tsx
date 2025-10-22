@@ -278,7 +278,7 @@ export default function PrivacyPolicy() {
               className="text-2xl font-bold text-gray-900 mb-4"
               style={{ fontFamily: "serif" }}
             >
-              10. Children's Privacy
+              10. Children&apos;s Privacy
             </h2>
             <p className="text-gray-700 mb-4">
               Our services are not intended for children under 18 years of age.
@@ -298,7 +298,7 @@ export default function PrivacyPolicy() {
             <p className="text-gray-700 mb-4">
               We may update this privacy policy from time to time. We will
               notify you of any changes by posting the new privacy policy on
-              this page and updating the "Last updated" date. You are advised to
+              this page and updating the &quot;Last updated&quot; date. You are advised to
               review this privacy policy periodically for any changes.
             </p>
           </section>

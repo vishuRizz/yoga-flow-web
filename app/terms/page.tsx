@@ -54,7 +54,7 @@ export default function TermsAndConditions() {
               1. Agreement to Terms
             </h2>
             <p className="text-gray-700 mb-4">
-              By accessing or using Yoga Flow's website, mobile application, or
+              By accessing or using Yoga Flow&apos;s website, mobile application, or
               services, you agree to be bound by these Terms and Conditions. If
               you disagree with any part of these terms, you may not access our
               services.
@@ -338,7 +338,7 @@ export default function TermsAndConditions() {
             <p className="text-gray-700 mb-4">
               We reserve the right to modify these Terms at any time. We will
               notify you of any changes by posting the new Terms on this page
-              and updating the "Last updated" date. Your continued use of the
+              and updating the &quot;Last updated&quot; date. Your continued use of the
               services after changes constitute acceptance of the new Terms.
             </p>
           </section>
