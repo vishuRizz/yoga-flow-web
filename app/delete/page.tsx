@@ -285,12 +285,12 @@ export default function DeleteAccount() {
           </div>
 
           <div>
-              <label
-                htmlFor="confirmation"
-                className="block text-gray-900 font-medium mb-2"
-              >
-                Type &quot;DELETE&quot; to Confirm *
-              </label>
+            <label
+              htmlFor="confirmation"
+              className="block text-gray-900 font-medium mb-2"
+            >
+              Type &quot;DELETE&quot; to Confirm *
+            </label>
             <input
               type="text"
               id="confirmation"
@@ -327,10 +327,10 @@ export default function DeleteAccount() {
           <h3 className="font-bold text-gray-900 mb-4 text-center">
             Need Help?
           </h3>
-            <p className="text-gray-700 text-center mb-6">
-              If you&apos;re having issues with your account, our support team is here
-              to help.
-            </p>
+          <p className="text-gray-700 text-center mb-6">
+            If you&apos;re having issues with your account, our support team is
+            here to help.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"

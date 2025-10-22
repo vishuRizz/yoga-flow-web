@@ -41,7 +41,9 @@ export default function Hero() {
 
     const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
     if (!keyId) {
-      setPaymentError("Payment gateway is not configured. Please contact support.");
+      setPaymentError(
+        "Payment gateway is not configured. Please contact support."
+      );
       setIsLoadingPayment(false);
       return;
     }
@@ -157,11 +159,9 @@ export default function Hero() {
               >
                 Join Yoga Flow
               </h2>
-              <p
-                className="text-gray-600 mb-6"
-                style={{ fontFamily: "serif" }}
-              >
-                Subscribe to access all live and recorded classes from Rishikesh&apos;s best yoga teachers.
+              <p className="text-gray-600 mb-6" style={{ fontFamily: "serif" }}>
+                Subscribe to access all live and recorded classes from
+                Rishikesh&apos;s best yoga teachers.
               </p>
 
               <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 mb-6">
@@ -173,7 +173,10 @@ export default function Hero() {
 
               {paymentError && (
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-                  <p className="text-red-600 text-sm" style={{ fontFamily: "serif" }}>
+                  <p
+                    className="text-red-600 text-sm"
+                    style={{ fontFamily: "serif" }}
+                  >
                     {paymentError}
                   </p>
                 </div>
@@ -182,7 +185,10 @@ export default function Hero() {
               {isLoadingPayment && (
                 <div className="flex items-center justify-center mb-4">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#ff8c42]"></div>
-                  <p className="ml-3 text-gray-600" style={{ fontFamily: "serif" }}>
+                  <p
+                    className="ml-3 text-gray-600"
+                    style={{ fontFamily: "serif" }}
+                  >
                     Loading payment gateway...
                   </p>
                 </div>
@@ -196,7 +202,10 @@ export default function Hero() {
                 {isLoadingPayment ? "Processing..." : "Subscribe Now"}
               </button>
 
-              <p className="text-sm text-gray-500 mt-4" style={{ fontFamily: "serif" }}>
+              <p
+                className="text-sm text-gray-500 mt-4"
+                style={{ fontFamily: "serif" }}
+              >
                 Cancel anytime. No commitment required.
               </p>
             </div>
