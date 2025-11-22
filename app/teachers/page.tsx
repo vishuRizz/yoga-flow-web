@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const teachers = [
+/*const teachers = [
   {
     name: "Priya Sharma",
     title: "Hatha Yoga Lead Mentor",
@@ -10,7 +10,7 @@ const teachers = [
       "Priya blends traditional Rishikesh lineage with mindful alignment, helping students build a steady foundation and breathe with intention.",
     specialties: ["Hatha", "Pranayama", "Beginner Programs"],
     years: "12 years",
-  },
+  }, 
   {
     name: "Arjun Verma",
     title: "Vinyasa Flow Guide",
@@ -52,7 +52,7 @@ const teachers = [
     years: "11 years",
   },
 ];
-
+*/
 export const metadata: Metadata = {
   title: "Yoga Flow Teachers | Meet Our Rishikesh Mentors",
   description:
