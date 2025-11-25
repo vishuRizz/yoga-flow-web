@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Instagram, Youtube, Award, BookOpen, Briefcase, St
 
 export default function PortfolioSections() {
   return (
-    <div className="bg-[#f5f1eb]">
+    <div className="bg-[0f766e]">
       {/* Existing Research Section */}
       {/* <section className="py-20 px-6 border-b border-gray-200">
         <div className="max-w-5xl mx-auto text-center">
