@@ -18,8 +18,8 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Classes", href: "/classes" },
-    /* { label: "Teachers", href: "/teachers" }, */
     { label: "About Us", href: "/about" },
+    { label: "Community", href: "/community" },
     { label: "Contact", href: "/contact" },
   ];
 
