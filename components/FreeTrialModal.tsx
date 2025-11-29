@@ -184,7 +184,7 @@ export default function FreeTrialModal({
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
-                placeholder="+91 98765 43210"
+                placeholder="+91 75794 71957"
                 className={`rounded-xl border ${
                   errors.phone ? "border-red-500" : "border-[#f0dcc8]"
                 } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]`}

@@ -2,7 +2,18 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState, useCallback } from "react";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, Check } from "lucide-react";
+
+const pricing = {
+  "India": [
+    { id: "IN_MONTHLY", label: "Monthly Access", price: 999, currency: "INR", description: "Access all live and recorded classes." },
+    { id: "IN_6MONTHS", label: "6 Months Full Course", price: 4499, currency: "INR", description: "Best value for full course commitment." },
+  ],
+  "Outside India": [
+    { id: "INTL_MONTHLY", label: "Monthly Access", price: 49, currency: "USD", description: "Access all live and recorded classes." },
+    { id: "INTL_6MONTHS", label: "6 Months Full Course", price: 219, currency: "USD", description: "Best value for full course commitment." },
+  ],
+};
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -12,6 +23,9 @@ export default function Navbar() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [isLoadingPayment, setIsLoadingPayment] = useState(false);
   const [paymentError, setPaymentError] = useState<string | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<"India" | "Outside India">("India");
+  const [selectedPlanId, setSelectedPlanId] = useState(pricing.India[0].id);
+  
   const pathname = usePathname();
   const router = useRouter();
 
@@ -35,7 +49,8 @@ export default function Navbar() {
     }
     return pathname?.startsWith(href) ?? false;
   };
-
+  
+  // ... (useEffect for scroll handling remains the same)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -57,6 +72,7 @@ export default function Navbar() {
     };
   }, [lastScrollY]);
 
+
   const loadRazorpayScript = useCallback(async () => {
     if (typeof window === "undefined") return false;
 
@@ -76,11 +92,19 @@ export default function Navbar() {
   const handleJoinClasses = useCallback(async () => {
     setPaymentError(null);
     setIsLoadingPayment(true);
-    setIsPaymentModalOpen(true);
 
     const scriptLoaded = await loadRazorpayScript();
     if (!scriptLoaded || !window.Razorpay) {
       setPaymentError("Unable to load payment gateway. Please try again.");
+      setIsLoadingPayment(false);
+      return;
+    }
+
+    const currentCountryPlans = pricing[selectedCountry];
+    const selectedPlan = currentCountryPlans.find(p => p.id === selectedPlanId);
+
+    if (!selectedPlan) {
+      setPaymentError("Selected plan is invalid. Please choose a plan.");
       setIsLoadingPayment(false);
       return;
     }
@@ -93,13 +117,17 @@ export default function Navbar() {
       setIsLoadingPayment(false);
       return;
     }
-
+    
+    // Razorpay amount needs to be in paise/cents.
+    // INR amount * 100, USD amount * 100 (for cents).
+    const amountInSmallestUnit = selectedPlan.price * 100;
+    
     const razorpay = new window.Razorpay({
       key: keyId,
-      amount: 49900,
-      currency: "INR",
+      amount: amountInSmallestUnit, 
+      currency: selectedPlan.currency, 
       name: "Yoga Flow Membership",
-      description: "Monthly subscription - Access all classes",
+      description: `${selectedPlan.label} - Access all classes`,
       handler: (response) => {
         console.log("Payment successful:", response);
         setIsLoadingPayment(false);
@@ -113,6 +141,7 @@ export default function Navbar() {
       },
       notes: {
         source: "Navbar Join Classes CTA",
+        plan: selectedPlan.id,
       },
       theme: {
         color: "#14b8a6",
@@ -136,7 +165,9 @@ export default function Navbar() {
       setPaymentError("Unable to initiate payment. Please try again.");
       setIsLoadingPayment(false);
     }
-  }, [loadRazorpayScript, router]);
+  }, [loadRazorpayScript, router, selectedCountry, selectedPlanId]);
+
+  const countryPlans = pricing[selectedCountry];
 
   return (
     <>
@@ -233,7 +264,7 @@ export default function Navbar() {
               Start Free Trial
             </button>
             <button
-              onClick={handleJoinClasses}
+              onClick={() => setIsPaymentModalOpen(true)}
               className="px-8 py-3 bg-teal-600 text-white rounded-full font-light text-base hover:bg-teal-700 transition-colors"
             >
               Join Our Classes
@@ -320,7 +351,7 @@ export default function Navbar() {
                   Start Free Trial
                 </button>
                 <button
-                  onClick={handleJoinClasses}
+                  onClick={() => setIsPaymentModalOpen(true)}
                   className="w-full px-6 py-3 bg-teal-600 text-white rounded-full font-light text-sm hover:bg-teal-700 transition-colors"
                 >
                   Join Our Classes
@@ -331,12 +362,15 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Payment Modal */}
+      {/* Payment Modal - MODIFIED */}
       {isPaymentModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl">
+          <div className="relative bg-white rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl">
             <button
-              onClick={() => setIsPaymentModalOpen(false)}
+              onClick={() => {
+                setIsPaymentModalOpen(false);
+                setIsLoadingPayment(false);
+              }}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
               aria-label="Close"
             >
@@ -345,21 +379,79 @@ export default function Navbar() {
 
             <div className="text-center">
               <h2
-                className="text-3xl font-bold text-gray-900 mb-4"
+                className="text-3xl font-bold text-gray-900 mb-2"
                 style={{ fontFamily: "serif" }}
               >
-                Join Yoga Flow
+                Choose Your Plan
               </h2>
               <p className="text-gray-600 mb-6" style={{ fontFamily: "serif" }}>
-                Subscribe to access all live and recorded classes from
-                Rishikesh&apos;s best yoga teachers.
+                Select your country and preferred subscription plan.
               </p>
 
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 mb-6">
-                <p className="text-4xl font-bold text-teal-600 mb-2">₹499</p>
-                <p className="text-gray-600" style={{ fontFamily: "serif" }}>
-                  per month
-                </p>
+              {/* Country/Region Selector Tabs */}
+              <div className="flex justify-center space-x-2 bg-gray-100 rounded-full p-1 mb-8">
+                {(Object.keys(pricing) as Array<keyof typeof pricing>).map(
+                  (country) => (
+                    <button
+                      key={country}
+                      onClick={() => {
+                        setSelectedCountry(country);
+                        setSelectedPlanId(pricing[country][0].id); // Reset plan on tab change
+                        setPaymentError(null);
+                      }}
+                      className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                        selectedCountry === country
+                          ? "bg-teal-600 text-white shadow-md"
+                          : "text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      {country}
+                    </button>
+                  )
+                )}
+              </div>
+
+              {/* Pricing Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                {countryPlans.map((plan) => (
+                  <button
+                    key={plan.id}
+                    onClick={() => {
+                      setSelectedPlanId(plan.id);
+                      setPaymentError(null);
+                    }}
+                    disabled={isLoadingPayment}
+                    className={`p-6 rounded-2xl text-left transition-all duration-200 border-2 ${
+                      selectedPlanId === plan.id
+                        ? "border-teal-600 bg-teal-50/50 shadow-lg"
+                        : "border-gray-200 bg-white hover:border-teal-300"
+                    }`}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h3
+                        className="text-xl font-bold text-gray-900"
+                        style={{ fontFamily: "serif" }}
+                      >
+                        {plan.label}
+                      </h3>
+                      {selectedPlanId === plan.id && (
+                        <Check className="w-6 h-6 text-teal-600" />
+                      )}
+                    </div>
+
+                    <p
+                      className="text-3xl font-extrabold text-gray-900 mb-1"
+                      style={{ fontFamily: "serif" }}
+                    >
+                      {plan.currency === "INR" ? "₹" : "$"}
+                      {plan.price}
+                      <span className="text-base font-medium text-gray-500">
+                        / {plan.id.includes("MONTHLY") ? "month" : "6 months"}
+                      </span>
+                    </p>
+                    <p className="text-sm text-gray-500">{plan.description}</p>
+                  </button>
+                ))}
               </div>
 
               {paymentError && (
@@ -387,17 +479,17 @@ export default function Navbar() {
 
               <button
                 onClick={handleJoinClasses}
-                disabled={isLoadingPayment}
+                disabled={isLoadingPayment || !selectedPlanId}
                 className="w-full rounded-full bg-teal-600 px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-teal-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoadingPayment ? "Processing..." : "Subscribe Now"}
+                {isLoadingPayment ? "Processing..." : "Continue to Payment"}
               </button>
 
               <p
                 className="text-sm text-gray-500 mt-4"
                 style={{ fontFamily: "serif" }}
               >
-                Cancel anytime. No commitment required.
+                {selectedPlanId?.includes("MONTHLY") ? "Cancel anytime. No commitment required." : "One-time payment for 6 months."}
               </p>
             </div>
           </div>

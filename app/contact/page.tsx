@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </p>
                 <p>
                   <span className="font-semibold text-[#d97706]">Phone:</span>{" "}
-                  +91 98765 43210
+                  +91 75794 71957
                 </p>
                 <p>
                   <span className="font-semibold text-[#d97706]">

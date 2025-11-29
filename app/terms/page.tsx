@@ -128,8 +128,8 @@ export default function TermsAndConditions() {
               4.1 Subscription Plans
             </h3>
             <p className="text-gray-700 mb-4">
-              Yoga Flow offers monthly subscription plans at ₹499 per month.
-              Your subscription automatically renews each month unless cancelled
+              Yoga Flow offers various subscription plans. For India-based users, the monthly plan is ₹999 per month. Other plans and regional pricing are available.
+              Your subscription automatically renews unless cancelled
               before the renewal date.
             </p>
             <h3 className="text-xl font-bold text-gray-900 mb-3 mt-4">
