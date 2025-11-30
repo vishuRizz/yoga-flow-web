@@ -3,7 +3,7 @@
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { X, Check } from "lucide-react";
+import { X, Check, Moon, Dumbbell, Award } from "lucide-react";
 
 const pricing = {
   "India": [
@@ -69,7 +69,6 @@ export default function Hero() {
       return;
     }
 
-    // Razorpay amount needs to be in paise/cents.
     const amountInSmallestUnit = selectedPlan.price * 100;
 
     const razorpay = new window.Razorpay({
@@ -82,7 +81,6 @@ export default function Hero() {
         console.log("Payment successful:", response);
         setIsLoadingPayment(false);
         setIsPaymentModalOpen(false);
-        // Redirect to classes page after successful payment
         router.push("/classes?payment=success");
       },
       prefill: {
@@ -95,7 +93,7 @@ export default function Hero() {
         plan: selectedPlan.id,
       },
       theme: {
-        color: "#ff8c42", // Adjusted color for Hero
+        color: "#ff8c42",
       },
       modal: {
         ondismiss: () => {
@@ -167,16 +165,16 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Payment Modal - MODIFIED */}
+      {/* Payment Modal */}
       {isPaymentModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative bg-white rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="relative bg-white rounded-3xl p-8 max-w-3xl w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => {
                 setIsPaymentModalOpen(false);
                 setIsLoadingPayment(false);
               }}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
               aria-label="Close"
             >
               <X className="w-6 h-6" />
@@ -201,7 +199,7 @@ export default function Hero() {
                       key={country}
                       onClick={() => {
                         setSelectedCountry(country);
-                        setSelectedPlanId(pricing[country][0].id); // Reset plan on tab change
+                        setSelectedPlanId(pricing[country][0].id);
                         setPaymentError(null);
                       }}
                       className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
@@ -259,8 +257,174 @@ export default function Hero() {
                 ))}
               </div>
 
+              {/* CURRICULUM SECTION - ADDED HERE */}
+              <div className="mt-8 pt-8 border-t-2 border-gray-200">
+                <div className="text-center mb-6">
+                  <h3
+                    className="text-2xl font-bold text-gray-900 mb-2"
+                    style={{ fontFamily: 'serif' }}
+                  >
+                    Your 6-Month Transformation Journey
+                  </h3>
+                  <p
+                    className="text-sm text-gray-600"
+                    style={{ fontFamily: 'serif' }}
+                  >
+                    Here's what you'll achieve with our proven program
+                  </p>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  {/* Month 1 */}
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="rounded-full p-2 bg-blue-100">
+                        <Moon className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500">Month 1</p>
+                        <h4 className="text-base font-bold text-gray-900" style={{ fontFamily: 'serif' }}>
+                          Sleep Better, Feel Calmer
+                        </h4>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Fall asleep 15–20 minutes faster</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>2–3 point stress improvement</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Less neck and shoulder tension</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Sleep: </span>
+                        <span className="text-[#ff8c42] font-bold">35 min → 18 min</span>
+                      </div>
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Stress: </span>
+                        <span className="text-[#ff8c42] font-bold">7 → 4</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                      <p className="text-gray-700 italic text-xs">
+                        "I finally sleep through the night without waking up anxious."
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Month 3 */}
+                  <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="rounded-full p-2 bg-orange-100">
+                        <Dumbbell className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500">Month 3</p>
+                        <h4 className="text-base font-bold text-gray-900" style={{ fontFamily: 'serif' }}>
+                          Strength, Stability, Less Pain
+                        </h4>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Hold plank 30+ seconds</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Move without stiffness or back pain</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Use 2-minute breath tools at work</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Plank: </span>
+                        <span className="text-[#ff8c42] font-bold">12s → 38s</span>
+                      </div>
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Pain: </span>
+                        <span className="text-[#ff8c42] font-bold">5/week → 1/week</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                      <p className="text-gray-700 italic text-xs">
+                        "My back doesn't hurt after sitting all day, and I feel so much stronger."
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Month 6 */}
+                  <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-5">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="rounded-full p-2 bg-green-100">
+                        <Award className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500">Month 6</p>
+                        <h4 className="text-base font-bold text-gray-900" style={{ fontFamily: 'serif' }}>
+                          Complete Transformation
+                        </h4>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>7–8 hours quality sleep consistently</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>60+ second planks, pain-free movement</span>
+                      </li>
+                      <li className="flex items-start text-xs text-gray-700">
+                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span>Touch toes, comfortable deep squat</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Sleep: </span>
+                        <span className="text-[#ff8c42] font-bold">85% quality</span>
+                      </div>
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Stress: </span>
+                        <span className="text-[#ff8c42] font-bold">7 → 3</span>
+                      </div>
+                      <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
+                        <span className="font-semibold">Plank: </span>
+                        <span className="text-[#ff8c42] font-bold">12s → 75s</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                      <p className="text-gray-700 italic text-xs">
+                        "I sleep deeply, move without pain, and handle stress like a pro. Yoga Flow gave me my life back."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* END CURRICULUM SECTION */}
+
               {paymentError && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4 mt-6">
                   <p
                     className="text-red-600 text-sm"
                     style={{ fontFamily: "serif" }}
@@ -271,7 +435,7 @@ export default function Hero() {
               )}
 
               {isLoadingPayment && (
-                <div className="flex items-center justify-center mb-4">
+                <div className="flex items-center justify-center mb-4 mt-6">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#ff8c42]"></div>
                   <p
                     className="ml-3 text-gray-600"
@@ -285,7 +449,7 @@ export default function Hero() {
               <button
                 onClick={handleJoinClasses}
                 disabled={isLoadingPayment || !selectedPlanId}
-                className="w-full rounded-full bg-[#ff8c42] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#ff7a28] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-full bg-[#ff8c42] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#ff7a28] transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-6"
               >
                 {isLoadingPayment ? "Processing..." : "Continue to Payment"}
               </button>
