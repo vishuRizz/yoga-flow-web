@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/*const teachers = [
+const teachers = [
   {
     name: "Priya Sharma",
     title: "Hatha Yoga Lead Mentor",
@@ -52,7 +52,6 @@ import Footer from "@/components/Footer";
     years: "11 years",
   },
 ];
-*/
 export const metadata: Metadata = {
   title: "Yoga Flow Teachers | Meet Our Rishikesh Mentors",
   description:
