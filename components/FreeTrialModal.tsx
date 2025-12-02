@@ -136,8 +136,8 @@ export default function FreeTrialModal({
                 }
                 placeholder="Enter your full name"
                 className={`rounded-xl border ${
-                  errors.name ? "border-red-500" : "border-[#f0dcc8]"
-                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]`}
+                  errors.name ? "border-red-500" : "border-teal-200"
+                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]`}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -161,8 +161,8 @@ export default function FreeTrialModal({
                 }
                 placeholder="name@example.com"
                 className={`rounded-xl border ${
-                  errors.email ? "border-red-500" : "border-[#f0dcc8]"
-                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]`}
+                  errors.email ? "border-red-500" : "border-teal-200"
+                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -186,8 +186,8 @@ export default function FreeTrialModal({
                 }
                 placeholder="+91 75794 71957"
                 className={`rounded-xl border ${
-                  errors.phone ? "border-red-500" : "border-[#f0dcc8]"
-                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]`}
+                  errors.phone ? "border-red-500" : "border-teal-200"
+                } bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]`}
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -198,7 +198,7 @@ export default function FreeTrialModal({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full rounded-full bg-[#ff8c42] text-white py-3 font-medium hover:bg-[#ff7a28] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full rounded-full bg-[#14b8a6] text-white py-3 font-medium hover:bg-[#0d9488] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Starting Trial..." : "Start Free Trial"}
             </button>

@@ -9,11 +9,11 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-[#f5f1eb] py-20 px-6">
+    <div className="min-h-screen bg-teal-50 py-20 px-6">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
         <Link
           href="/"
-          className="inline-flex items-center text-[#ff8c42] hover:text-[#ff7a28] mb-6 transition-colors"
+          className="inline-flex items-center text-[#14b8a6] hover:text-[#0d9488] mb-6 transition-colors"
         >
           <svg
             className="w-5 h-5 mr-2"
@@ -314,7 +314,7 @@ export default function PrivacyPolicy() {
               If you have any questions about this privacy policy or our data
               practices, please contact us:
             </p>
-            <div className="bg-[#f5f1eb] rounded-lg p-6 text-gray-700">
+            <div className="bg-teal-50 rounded-lg p-6 text-gray-700">
               <p className="mb-2">
                 <strong>Email:</strong> privacy@yogaflow.com
               </p>
@@ -339,7 +339,7 @@ export default function PrivacyPolicy() {
               visit our{" "}
               <Link
                 href="/delete"
-                className="text-[#ff8c42] hover:text-[#ff7a28] font-medium"
+                className="text-[#14b8a6] hover:text-[#0d9488] font-medium"
               >
                 Account Deletion page
               </Link>
@@ -352,13 +352,13 @@ export default function PrivacyPolicy() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/terms"
-              className="px-8 py-3 bg-[#f0dcc8] text-gray-900 rounded-full font-light text-base hover:bg-[#e8d4be] transition-colors text-center"
+              className="px-8 py-3 bg-teal-100 text-gray-900 rounded-full font-light text-base hover:bg-teal-200 transition-colors text-center"
             >
               View Terms & Conditions
             </Link>
             <Link
               href="/delete"
-              className="px-8 py-3 bg-[#ff8c42] text-white rounded-full font-light text-base hover:bg-[#ff7a28] transition-colors text-center"
+              className="px-8 py-3 bg-[#14b8a6] text-white rounded-full font-light text-base hover:bg-[#0d9488] transition-colors text-center"
             >
               Delete Account
             </Link>

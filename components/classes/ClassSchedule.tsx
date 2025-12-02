@@ -172,7 +172,7 @@ export default function ClassSchedule() {
         plan: selectedPlan.id,
       },
       theme: {
-        color: "#ff8c42",
+        color: "#14b8a6",
       },
       modal: {
         ondismiss: () => {
@@ -206,7 +206,7 @@ export default function ClassSchedule() {
 
   return (
     <>
-      <section className="bg-white/70 backdrop-blur-sm border border-[#f0dcc8] rounded-3xl p-8 md:p-10 shadow-sm">
+      <section className="bg-white/70 backdrop-blur-sm border border-teal-200 rounded-3xl p-8 md:p-10 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
             <h2
@@ -232,7 +232,7 @@ export default function ClassSchedule() {
                 onClick={() => setActiveTab("live")}
                 className={`text-sm md:text-base font-medium pb-2 transition-colors ${
                   activeTab === "live"
-                    ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
+                    ? "text-[#14b8a6] border-b-2 border-[#14b8a6]"
                     : "text-gray-400 hover:text-gray-600"
                 }`}
               >
@@ -243,7 +243,7 @@ export default function ClassSchedule() {
                 onClick={() => setActiveTab("recorded")}
                 className={`text-sm md:text-base font-medium pb-2 transition-colors ${
                   activeTab === "recorded"
-                    ? "text-[#ff8c42] border-b-2 border-[#ff8c42]"
+                    ? "text-[#14b8a6] border-b-2 border-[#14b8a6]"
                     : "text-gray-400 hover:text-gray-600"
                 }`}
               >
@@ -256,7 +256,7 @@ export default function ClassSchedule() {
                 type="button"
                 onClick={() => setIsPaymentModalOpen(true)}
                 disabled={isSubscribed || isLoadingPayment}
-                className="rounded-full bg-[#ff8c42] px-5 py-2 text-sm md:text-base font-medium text-white shadow-sm transition-colors hover:bg-[#ff7a28] disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-full bg-[#14b8a6] px-5 py-2 text-sm md:text-base font-medium text-white shadow-sm transition-colors hover:bg-[#0d9488] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {subscribeLabel}
               </button>
@@ -288,17 +288,17 @@ export default function ClassSchedule() {
                 <button
                   key={filter}
                   type="button"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#fef3e6] px-4 py-2 text-sm text-gray-600 border border-[#f5d8bd] hover:bg-[#ffe8d0] transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-2 text-sm text-gray-600 border border-teal-200 hover:bg-teal-100 transition-colors"
                 >
                   {filter}
-                  <ChevronDown className="h-3 w-3 text-[#ff8c42]" />
+                  <ChevronDown className="h-3 w-3 text-[#14b8a6]" />
                 </button>
               ))}
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-[#f4ddc6] shadow-sm">
+            <div className="overflow-hidden rounded-3xl border border-teal-200 shadow-sm">
               <table className="min-w-full divide-y divide-[#f3d6bc] text-left">
-                <thead className="bg-gradient-to-r from-[#fff4eb] to-[#fde8d7]">
+                <thead className="bg-gradient-to-r from-teal-50 to-cyan-100">
                   <tr className="text-gray-500 text-xs md:text-sm uppercase tracking-wider">
                     <th className="px-6 py-4">Time</th>
                     <th className="px-6 py-4">Class</th>
@@ -313,7 +313,7 @@ export default function ClassSchedule() {
                     <tr
                       key={classItem.title}
                       className={`text-sm md:text-base text-gray-700 ${
-                        index % 2 === 1 ? "bg-[#fff7ef]" : ""
+                        index % 2 === 1 ? "bg-teal-50" : ""
                       }`}
                       style={{ fontFamily: "serif" }}
                     >
@@ -329,7 +329,7 @@ export default function ClassSchedule() {
                           href={classItem.joinUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[#ff8c42] font-medium hover:underline"
+                          className="text-[#14b8a6] font-medium hover:underline"
                         >
                           Join
                         </a>
@@ -345,7 +345,7 @@ export default function ClassSchedule() {
             {recordedClasses.map((classItem) => (
               <article
                 key={classItem.title}
-                className="rounded-2xl border border-[#f4ddc6] bg-[#fff7ef] p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="rounded-2xl border border-teal-200 bg-teal-50 p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <p
                   className="text-sm uppercase tracking-wide text-[#d97706] mb-2"
@@ -366,7 +366,7 @@ export default function ClassSchedule() {
                   <span>{classItem.duration}</span>
                   <Link
                     href="/contact"
-                    className="text-[#ff8c42] font-medium hover:underline"
+                    className="text-[#14b8a6] font-medium hover:underline"
                   >
                     Watch
                   </Link>
@@ -416,7 +416,7 @@ export default function ClassSchedule() {
                       }}
                       className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                         selectedCountry === country
-                          ? "bg-[#ff8c42] text-white shadow-md"
+                          ? "bg-[#14b8a6] text-white shadow-md"
                           : "text-gray-700 hover:bg-gray-200"
                       }`}
                     >
@@ -438,8 +438,8 @@ export default function ClassSchedule() {
                     disabled={isLoadingPayment}
                     className={`p-6 rounded-2xl text-left transition-all duration-200 border-2 ${
                       selectedPlanId === plan.id
-                        ? "border-[#ff8c42] bg-orange-50/50 shadow-lg"
-                        : "border-gray-200 bg-white hover:border-orange-300"
+                        ? "border-[#14b8a6] bg-teal-50/50 shadow-lg"
+                        : "border-gray-200 bg-white hover:border-teal-300"
                     }`}
                   >
                     <div className="flex justify-between items-start mb-2">
@@ -450,7 +450,7 @@ export default function ClassSchedule() {
                         {plan.label}
                       </h3>
                       {selectedPlanId === plan.id && (
-                        <Check className="w-6 h-6 text-[#ff8c42]" />
+                        <Check className="w-6 h-6 text-[#14b8a6]" />
                       )}
                     </div>
 
@@ -482,7 +482,7 @@ export default function ClassSchedule() {
 
               {isLoadingPayment && (
                 <div className="flex items-center justify-center mb-4">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#ff8c42]"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#14b8a6]"></div>
                   <p
                     className="ml-3 text-gray-600"
                     style={{ fontFamily: "serif" }}
@@ -495,7 +495,7 @@ export default function ClassSchedule() {
               <button
                 onClick={handleSubscribe}
                 disabled={isLoadingPayment || !selectedPlanId}
-                className="w-full rounded-full bg-[#ff8c42] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#ff7a28] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-full bg-[#14b8a6] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#0d9488] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoadingPayment ? "Processing..." : "Continue to Payment"}
               </button>

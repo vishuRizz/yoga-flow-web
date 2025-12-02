@@ -93,7 +93,7 @@ export default function Hero() {
         plan: selectedPlan.id,
       },
       theme: {
-        color: "#ff8c42",
+        color: "#14b8a6",
       },
       modal: {
         ondismiss: () => {
@@ -150,13 +150,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
               <button
                 onClick={() => setIsPaymentModalOpen(true)}
-                className="px-6 sm:px-9 py-3 sm:py-3.5 bg-[#ff8c42] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#ff7a28] transition-colors text-center"
+                className="px-6 sm:px-9 py-3 sm:py-3.5 bg-[#14b8a6] text-white rounded-full text-sm sm:text-base font-medium hover:bg-[#0d9488] transition-colors text-center"
               >
                 Join Our Classes
               </button>
               <Link
                 href="/contact"
-                className="px-6 sm:px-9 py-3 sm:py-3.5 bg-transparent border-2 border-[#ff8c42] text-[#ff8c42] rounded-full text-sm sm:text-base font-medium hover:bg-[#ff8c42] hover:text-white transition-colors text-center"
+                className="px-6 sm:px-9 py-3 sm:py-3.5 bg-transparent border-2 border-[#14b8a6] text-[#14b8a6] rounded-full text-sm sm:text-base font-medium hover:bg-[#14b8a6] hover:text-white transition-colors text-center"
               >
                 Start Free Trial
               </Link>
@@ -204,7 +204,7 @@ export default function Hero() {
                       }}
                       className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
                         selectedCountry === country
-                          ? "bg-[#ff8c42] text-white shadow-md"
+                          ? "bg-[#14b8a6] text-white shadow-md"
                           : "text-gray-700 hover:bg-gray-200"
                       }`}
                     >
@@ -226,8 +226,8 @@ export default function Hero() {
                     disabled={isLoadingPayment}
                     className={`p-6 rounded-2xl text-left transition-all duration-200 border-2 ${
                       selectedPlanId === plan.id
-                        ? "border-[#ff8c42] bg-orange-50/50 shadow-lg"
-                        : "border-gray-200 bg-white hover:border-orange-300"
+                        ? "border-[#14b8a6] bg-teal-50/50 shadow-lg"
+                        : "border-gray-200 bg-white hover:border-teal-300"
                     }`}
                   >
                     <div className="flex justify-between items-start mb-2">
@@ -238,7 +238,7 @@ export default function Hero() {
                         {plan.label}
                       </h3>
                       {selectedPlanId === plan.id && (
-                        <Check className="w-6 h-6 text-[#ff8c42]" />
+                        <Check className="w-6 h-6 text-[#14b8a6]" />
                       )}
                     </div>
 
@@ -291,15 +291,15 @@ export default function Hero() {
 
                     <ul className="space-y-1 mb-3">
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Fall asleep 15–20 minutes faster</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>2–3 point stress improvement</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Less neck and shoulder tension</span>
                       </li>
                     </ul>
@@ -307,15 +307,15 @@ export default function Hero() {
                     <div className="flex flex-wrap gap-2 mb-3">
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Sleep: </span>
-                        <span className="text-[#ff8c42] font-bold">35 min → 18 min</span>
+                        <span className="text-[#14b8a6] font-bold">35 min → 18 min</span>
                       </div>
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Stress: </span>
-                        <span className="text-[#ff8c42] font-bold">7 → 4</span>
+                        <span className="text-[#14b8a6] font-bold">7 → 4</span>
                       </div>
                     </div>
 
-                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#14b8a6]">
                       <p className="text-gray-700 italic text-xs">
                         "I finally sleep through the night without waking up anxious."
                       </p>
@@ -323,10 +323,10 @@ export default function Hero() {
                   </div>
 
                   {/* Month 3 */}
-                  <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl p-5">
+                  <div className="bg-teal-50 border-2 border-teal-200 rounded-2xl p-5">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="rounded-full p-2 bg-orange-100">
-                        <Dumbbell className="w-5 h-5 text-orange-600" />
+                        <Dumbbell className="w-5 h-5 text-teal-600" />
                       </div>
                       <div>
                         <p className="text-xs font-semibold text-gray-500">Month 3</p>
@@ -338,15 +338,15 @@ export default function Hero() {
 
                     <ul className="space-y-1 mb-3">
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Hold plank 30+ seconds</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Move without stiffness or back pain</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Use 2-minute breath tools at work</span>
                       </li>
                     </ul>
@@ -354,15 +354,15 @@ export default function Hero() {
                     <div className="flex flex-wrap gap-2 mb-3">
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Plank: </span>
-                        <span className="text-[#ff8c42] font-bold">12s → 38s</span>
+                        <span className="text-[#14b8a6] font-bold">12s → 38s</span>
                       </div>
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Pain: </span>
-                        <span className="text-[#ff8c42] font-bold">5/week → 1/week</span>
+                        <span className="text-[#14b8a6] font-bold">5/week → 1/week</span>
                       </div>
                     </div>
 
-                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#14b8a6]">
                       <p className="text-gray-700 italic text-xs">
                         "My back doesn't hurt after sitting all day, and I feel so much stronger."
                       </p>
@@ -385,15 +385,15 @@ export default function Hero() {
 
                     <ul className="space-y-1 mb-3">
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>7–8 hours quality sleep consistently</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>60+ second planks, pain-free movement</span>
                       </li>
                       <li className="flex items-start text-xs text-gray-700">
-                        <span className="text-[#ff8c42] mr-2">✓</span>
+                        <span className="text-[#14b8a6] mr-2">✓</span>
                         <span>Touch toes, comfortable deep squat</span>
                       </li>
                     </ul>
@@ -401,19 +401,19 @@ export default function Hero() {
                     <div className="flex flex-wrap gap-2 mb-3">
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Sleep: </span>
-                        <span className="text-[#ff8c42] font-bold">85% quality</span>
+                        <span className="text-[#14b8a6] font-bold">85% quality</span>
                       </div>
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Stress: </span>
-                        <span className="text-[#ff8c42] font-bold">7 → 3</span>
+                        <span className="text-[#14b8a6] font-bold">7 → 3</span>
                       </div>
                       <div className="bg-white rounded-lg px-2 py-1 text-xs border border-gray-200">
                         <span className="font-semibold">Plank: </span>
-                        <span className="text-[#ff8c42] font-bold">12s → 75s</span>
+                        <span className="text-[#14b8a6] font-bold">12s → 75s</span>
                       </div>
                     </div>
 
-                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#ff8c42]">
+                    <div className="bg-white/70 rounded-lg p-2 border-l-4 border-[#14b8a6]">
                       <p className="text-gray-700 italic text-xs">
                         "I sleep deeply, move without pain, and handle stress like a pro. Yoga Flow gave me my life back."
                       </p>
@@ -436,7 +436,7 @@ export default function Hero() {
 
               {isLoadingPayment && (
                 <div className="flex items-center justify-center mb-4 mt-6">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#ff8c42]"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#14b8a6]"></div>
                   <p
                     className="ml-3 text-gray-600"
                     style={{ fontFamily: "serif" }}
@@ -449,7 +449,7 @@ export default function Hero() {
               <button
                 onClick={handleJoinClasses}
                 disabled={isLoadingPayment || !selectedPlanId}
-                className="w-full rounded-full bg-[#ff8c42] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#ff7a28] transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+                className="w-full rounded-full bg-[#14b8a6] px-8 py-4 text-lg font-medium text-white shadow-lg hover:bg-[#0d9488] transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-6"
               >
                 {isLoadingPayment ? "Processing..." : "Continue to Payment"}
               </button>

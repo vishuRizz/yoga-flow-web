@@ -31,8 +31,8 @@ export default function CurriculumSection() {
       month: 3,
       title: "Building: Strength, Stability, Less Pain",
       icon: Dumbbell,
-      color: "bg-orange-50 border-orange-200",
-      iconColor: "text-orange-600",
+      color: "bg-teal-50 border-teal-200",
+      iconColor: "text-teal-600",
       focus: [
         "Foundational strength flows (chair, lunges, planks, bridges)",
         "Joint stability and mobility work",
@@ -84,7 +84,7 @@ export default function CurriculumSection() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#f5f1eb] via-[#f7efe4] to-[#f6e6d7] py-20 px-6">
+    <section className="bg-gradient-to-b from-teal-50 via-teal-100 to-teal-100 py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -109,7 +109,7 @@ export default function CurriculumSection() {
         {/* Timeline */}
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-orange-300 to-green-300 -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-teal-300 to-green-300 -translate-x-1/2" />
 
           {/* Milestones */}
           <div className="space-y-16">
@@ -153,7 +153,7 @@ export default function CurriculumSection() {
                         <ul className="space-y-2">
                           {milestone.focus.map((item, i) => (
                             <li key={i} className="flex items-start text-gray-700 text-sm">
-                              <span className="text-[#ff8c42] mr-2">•</span>
+                              <span className="text-[#14b8a6] mr-2">•</span>
                               <span>{item}</span>
                             </li>
                           ))}
@@ -168,7 +168,7 @@ export default function CurriculumSection() {
                         <ul className="space-y-2">
                           {milestone.results.map((item, i) => (
                             <li key={i} className="flex items-start text-gray-700 text-sm">
-                              <span className="text-[#ff8c42] mr-2">✓</span>
+                              <span className="text-[#14b8a6] mr-2">✓</span>
                               <span>{item}</span>
                             </li>
                           ))}
@@ -183,13 +183,13 @@ export default function CurriculumSection() {
                             className="bg-white rounded-lg px-4 py-2 text-sm border border-gray-200"
                           >
                             <span className="font-semibold capitalize">{key}: </span>
-                            <span className="text-[#ff8c42] font-bold">{value}</span>
+                            <span className="text-[#14b8a6] font-bold">{value}</span>
                           </div>
                         ))}
                       </div>
 
                       {/* Quote */}
-                      <div className="bg-white/70 rounded-xl p-4 border-l-4 border-[#ff8c42]">
+                      <div className="bg-white/70 rounded-xl p-4 border-l-4 border-[#14b8a6]">
                         <p className="text-gray-700 italic text-sm">
                           "{milestone.quote}"
                         </p>
@@ -198,7 +198,7 @@ export default function CurriculumSection() {
                   </div>
 
                   {/* Timeline dot (hidden on mobile) */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#ff8c42] border-4 border-white shadow-lg" />
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#14b8a6] border-4 border-white shadow-lg" />
 
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block flex-1" />
@@ -209,7 +209,7 @@ export default function CurriculumSection() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center bg-white/80 backdrop-blur-sm border-2 border-[#f0dcc8] rounded-3xl p-10 shadow-lg">
+        <div className="mt-20 text-center bg-white/80 backdrop-blur-sm border-2 border-teal-200 rounded-3xl p-10 shadow-lg">
           <h3
             className="text-3xl font-bold text-gray-900 mb-4"
             style={{ fontFamily: 'serif' }}
@@ -223,7 +223,7 @@ export default function CurriculumSection() {
             Join thousands who've transformed their lives through our proven 6-month program.
             Your journey to better sleep, less pain, and complete confidence starts today.
           </p>
-          <button className="px-10 py-4 bg-[#ff8c42] text-white rounded-full font-medium text-lg hover:bg-[#ff7a28] transition-colors shadow-lg">
+          <button className="px-10 py-4 bg-[#14b8a6] text-white rounded-full font-medium text-lg hover:bg-[#0d9488] transition-colors shadow-lg">
             Start Your Journey Now
           </button>
         </div>

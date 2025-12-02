@@ -12,7 +12,7 @@ export default function PortfolioSections() {
           </h2>
 
           <div className="mb-8">
-            <p className="text-7xl md:text-8xl font-bold text-[#ff8c42] mb-2" style={{ fontFamily: 'serif' }}>
+            <p className="text-7xl md:text-8xl font-bold text-[#14b8a6] mb-2" style={{ fontFamily: 'serif' }}>
               5,000+
             </p>
           </div>
@@ -35,7 +35,7 @@ export default function PortfolioSections() {
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="mb-8">
                 <h3 className="text-3xl font-bold text-black mb-2" style={{ fontFamily: 'serif' }}>Pawan Deep Negi</h3>
-                <p className="text-[#ff8c42] font-medium text-lg mb-4">Yoga Trainer</p>
+                <p className="text-[#14b8a6] font-medium text-lg mb-4">Yoga Trainer</p>
 
                 <div className="flex flex-col gap-2 text-gray-600 mb-6">
                   <div className="flex items-center gap-2">
@@ -62,11 +62,11 @@ export default function PortfolioSections() {
               <div className="space-y-6">
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-[#ff8c42]" /> Skills
+                    <Star className="w-5 h-5 text-[#14b8a6]" /> Skills
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {["Hatha & Ashtanga Yoga", "Vinyasa/Power flow", "Adjustment & Alignment", "Mantra & Meditation", "Breath awareness", "Weight training"].map((skill, i) => (
-                      <span key={i} className="bg-orange-50 text-orange-800 px-3 py-1 rounded-full text-sm">
+                      <span key={i} className="bg-teal-50 text-orange-800 px-3 py-1 rounded-full text-sm">
                         {skill}
                       </span>
                     ))}
@@ -75,7 +75,7 @@ export default function PortfolioSections() {
 
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-[#ff8c42]" /> Education & Certification
+                    <BookOpen className="w-5 h-5 text-[#14b8a6]" /> Education & Certification
                   </h4>
                   <ul className="space-y-2 text-gray-600 text-sm">
                     <li>• MA in YOGA (Uttarakhand Sanskrit University)</li>
@@ -86,7 +86,7 @@ export default function PortfolioSections() {
 
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5 text-[#ff8c42]" /> Experience
+                    <Briefcase className="w-5 h-5 text-[#14b8a6]" /> Experience
                   </h4>
                   <ul className="space-y-2 text-gray-600 text-sm">
                     <li><span className="font-medium">2023-Present:</span> Adishakti Yogashala & Rama school of yoga</li>
@@ -101,7 +101,7 @@ export default function PortfolioSections() {
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="mb-8">
                 <h3 className="text-3xl font-bold text-black mb-2" style={{ fontFamily: 'serif' }}>Aradhna Uniyal</h3>
-                <p className="text-[#ff8c42] font-medium text-lg mb-4">Yoga Practitioner</p>
+                <p className="text-[#14b8a6] font-medium text-lg mb-4">Yoga Practitioner</p>
 
                 <div className="flex flex-col gap-2 text-gray-600 mb-6">
                   <div className="flex items-center gap-2">
@@ -136,11 +136,11 @@ export default function PortfolioSections() {
               <div className="space-y-6">
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-[#ff8c42]" /> Skills & Specialization
+                    <Star className="w-5 h-5 text-[#14b8a6]" /> Skills & Specialization
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {["Traditional Hatha Yoga", "Ashtanga Vinyasa", "Yoga for Well-being", "Yogic Lifestyle", "Hindi (Native)", "English (Proficient)"].map((skill, i) => (
-                      <span key={i} className="bg-orange-50 text-orange-800 px-3 py-1 rounded-full text-sm">
+                      <span key={i} className="bg-teal-50 text-orange-800 px-3 py-1 rounded-full text-sm">
                         {skill}
                       </span>
                     ))}
@@ -149,7 +149,7 @@ export default function PortfolioSections() {
 
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-[#ff8c42]" /> Education
+                    <BookOpen className="w-5 h-5 text-[#14b8a6]" /> Education
                   </h4>
                   <ul className="space-y-2 text-gray-600 text-sm">
                     <li>• B.A. in Yoga (Ongoing, Uttarakhand Sanskrit University)</li>
@@ -159,7 +159,7 @@ export default function PortfolioSections() {
 
                 <div>
                   <h4 className="font-bold text-black mb-3 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#ff8c42]" /> Achievements
+                    <Award className="w-5 h-5 text-[#14b8a6]" /> Achievements
                   </h4>
                   <ul className="space-y-2 text-gray-600 text-sm">
                     <li>• 2nd Position – State Level Yogasana Championship</li>

@@ -3,7 +3,7 @@ import { Globe, Mic, Users, Heart } from 'lucide-react';
 
 export default function About() {
   return (
-    <section className="bg-[#f5f1eb] py-20 px-6">
+    <section className="bg-teal-50 py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -19,8 +19,8 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1 */}
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
-              <Globe className="w-8 h-8 text-[#ff8c42]" />
+            <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6">
+              <Globe className="w-8 h-8 text-[#14b8a6]" />
             </div>
             <h3 className="text-2xl font-bold text-black mb-4" style={{ fontFamily: 'serif' }}>
               Rooted in Rishikesh
@@ -32,8 +32,8 @@ export default function About() {
 
           {/* Card 2 */}
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
-              <Mic className="w-8 h-8 text-[#ff8c42]" />
+            <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6">
+              <Mic className="w-8 h-8 text-[#14b8a6]" />
             </div>
             <h3 className="text-2xl font-bold text-black mb-4" style={{ fontFamily: 'serif' }}>
               Live
@@ -45,8 +45,8 @@ export default function About() {
 
           {/* Card 3 */}
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
-              <Users className="w-8 h-8 text-[#ff8c42]" />
+            <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6">
+              <Users className="w-8 h-8 text-[#14b8a6]" />
             </div>
             <h3 className="text-2xl font-bold text-black mb-4" style={{ fontFamily: 'serif' }}>
               Community-Driven
@@ -58,8 +58,8 @@ export default function About() {
 
           {/* Card 4 */}
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
-              <Heart className="w-8 h-8 text-[#ff8c42]" />
+            <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6">
+              <Heart className="w-8 h-8 text-[#14b8a6]" />
             </div>
             <h3 className="text-2xl font-bold text-black mb-4" style={{ fontFamily: 'serif' }}>
               Designed for Peace

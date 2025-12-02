@@ -63,7 +63,7 @@ export default function TeachersPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-[#f5f1eb] via-[#f7efe4] to-[#f6e6d7] pt-32 md:pt-40 pb-24">
+      <main className="min-h-screen bg-gradient-to-b from-teal-50 via-teal-100 to-teal-100 pt-32 md:pt-40 pb-24">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <header className="text-center mb-16">
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-gray-500 mb-6">
@@ -90,9 +90,9 @@ export default function TeachersPage() {
             {teachers.map((teacher) => (
               <article
                 key={teacher.name}
-                className="relative overflow-hidden rounded-3xl border border-[#f0dcc8] bg-white/80 p-8 shadow-sm hover:shadow-md transition-shadow"
+                className="relative overflow-hidden rounded-3xl border border-teal-200 bg-white/80 p-8 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-[#fff4eb]/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-teal-50/40 via-transparent to-transparent" />
                 <div className="relative">
                   <p
                     className="text-sm uppercase tracking-wide text-[#d97706] mb-2"
@@ -116,7 +116,7 @@ export default function TeachersPage() {
                     {teacher.specialties.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-[#fef3e6] border border-[#f4d8be] px-4 py-1 text-sm text-[#b45309]"
+                        className="rounded-full bg-teal-50 border border-teal-200 px-4 py-1 text-sm text-teal-700"
                         style={{ fontFamily: "serif" }}
                       >
                         {tag}

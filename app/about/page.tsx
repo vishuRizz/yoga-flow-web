@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-[#f5f1eb] via-[#f8f0e6] to-[#f7e3d4] pt-32 md:pt-40 pb-24">
+      <main className="min-h-screen bg-gradient-to-b from-teal-50 via-cyan-50 to-cyan-100 pt-32 md:pt-40 pb-24">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <header className="text-center mb-16">
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-gray-500 mb-6">

@@ -31,7 +31,7 @@ export default function DeleteAccount() {
 
   if (isDeleted) {
     return (
-      <div className="min-h-screen bg-[#f5f1eb] py-20 px-6 flex items-center justify-center">
+      <div className="min-h-screen bg-teal-50 py-20 px-6 flex items-center justify-center">
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
           <div className="flex justify-center mb-6">
             <div className="bg-green-100 rounded-full p-4">
@@ -69,7 +69,7 @@ export default function DeleteAccount() {
 
           <Link
             href="/"
-            className="inline-block px-8 py-3 bg-[#ff8c42] text-white rounded-full font-light text-base hover:bg-[#ff7a28] transition-colors"
+            className="inline-block px-8 py-3 bg-[#14b8a6] text-white rounded-full font-light text-base hover:bg-[#0d9488] transition-colors"
           >
             Return to Home
           </Link>
@@ -79,11 +79,11 @@ export default function DeleteAccount() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f1eb] py-20 px-6">
+    <div className="min-h-screen bg-teal-50 py-20 px-6">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
         <Link
           href="/"
-          className="inline-flex items-center text-[#ff8c42] hover:text-[#ff7a28] mb-6 transition-colors"
+          className="inline-flex items-center text-[#14b8a6] hover:text-[#0d9488] mb-6 transition-colors"
         >
           <svg
             className="w-5 h-5 mr-2"
@@ -260,7 +260,7 @@ export default function DeleteAccount() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your account email"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff8c42] focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14b8a6] focus:border-transparent outline-none transition-all"
             />
             <p className="text-sm text-gray-600 mt-1">
               Enter the email address associated with your Yoga Flow account
@@ -280,7 +280,7 @@ export default function DeleteAccount() {
               onChange={(e) => setReason(e.target.value)}
               rows={4}
               placeholder="Help us improve by sharing why you're leaving (optional)"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff8c42] focus:border-transparent outline-none transition-all resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14b8a6] focus:border-transparent outline-none transition-all resize-none"
             />
           </div>
 
@@ -298,7 +298,7 @@ export default function DeleteAccount() {
               onChange={(e) => setConfirmation(e.target.value)}
               required
               placeholder="Type DELETE in capital letters"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ff8c42] focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14b8a6] focus:border-transparent outline-none transition-all"
             />
             <p className="text-sm text-gray-600 mt-1">
               This confirms you understand that this action is permanent and
@@ -334,7 +334,7 @@ export default function DeleteAccount() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-8 py-3 bg-[#f0dcc8] text-gray-900 rounded-full font-light text-base hover:bg-[#e8d4be] transition-colors text-center"
+              className="px-8 py-3 bg-teal-100 text-gray-900 rounded-full font-light text-base hover:bg-teal-200 transition-colors text-center"
             >
               Contact Support
             </Link>

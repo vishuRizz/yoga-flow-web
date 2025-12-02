@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-[#f5f1eb] via-[#f8f0e6] to-[#f6e6d7] pt-32 md:pt-40 pb-24">
+      <main className="min-h-screen bg-gradient-to-b from-teal-50 via-cyan-50 to-teal-100 pt-32 md:pt-40 pb-24">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <header className="text-center mb-16">
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-gray-500 mb-6">
@@ -35,7 +35,7 @@ export default function ContactPage() {
           </header>
 
           <section className="grid gap-10 md:grid-cols-2">
-            <article className="bg-white/80 backdrop-blur-sm border border-[#f0dcc8] rounded-3xl p-8 shadow-sm">
+            <article className="bg-white/80 backdrop-blur-sm border border-teal-200 rounded-3xl p-8 shadow-sm">
               <h2
                 className="text-2xl font-semibold text-gray-900 mb-4"
                 style={{ fontFamily: "serif" }}
@@ -68,7 +68,7 @@ export default function ContactPage() {
               </div>
             </article>
 
-            <article className="bg-[#fef8f2] border border-[#f0dcc8] rounded-3xl p-8 shadow-sm">
+            <article className="bg-teal-50 border border-teal-200 rounded-3xl p-8 shadow-sm">
               <h2
                 className="text-2xl font-semibold text-gray-900 mb-4"
                 style={{ fontFamily: "serif" }}
@@ -87,7 +87,7 @@ export default function ContactPage() {
                     id="name"
                     type="text"
                     placeholder="Your full name"
-                    className="rounded-xl border border-[#f0dcc8] bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]"
+                    className="rounded-xl border border-teal-200 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     id="email"
                     type="email"
                     placeholder="name@example.com"
-                    className="rounded-xl border border-[#f0dcc8] bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]"
+                    className="rounded-xl border border-teal-200 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -115,12 +115,12 @@ export default function ContactPage() {
                     id="message"
                     rows={4}
                     placeholder="Share how we can support your practice."
-                    className="rounded-xl border border-[#f0dcc8] bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff8c42]"
+                    className="rounded-xl border border-teal-200 bg-white px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-[#ff8c42] text-white py-3 font-medium hover:bg-[#ff7a28] transition-colors"
+                  className="w-full rounded-full bg-[#14b8a6] text-white py-3 font-medium hover:bg-[#0d9488] transition-colors"
                 >
                   Send Message
                 </button>
