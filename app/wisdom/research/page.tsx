@@ -24,7 +24,7 @@ interface ResearchCategory {
 const researchData: ResearchCategory[] = [
     {
         id: "anxiety",
-        emoji: "🧘‍♀️",
+        emoji: "🕉️",
         title: "Anxiety Reduction",
         description: "40% reduction in anxiety symptoms in clinical populations",
         keyFindings: [
@@ -41,7 +41,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "blood-pressure",
-        emoji: "❤️",
+        emoji: "💗",
         title: "Blood Pressure Reduction",
         description: "4-8 mmHg systolic BP reduction consistently across studies",
         keyFindings: [
@@ -77,7 +77,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "stress",
-        emoji: "😌",
+        emoji: "🧘",
         title: "Stress & Cortisol Reduction",
         description: "Significant cortisol reduction in yoga practitioners vs. controls",
         keyFindings: [
@@ -94,7 +94,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "weight",
-        emoji: "⚖️",
+        emoji: "⚗️",
         title: "Weight & Metabolic Improvement",
         description: "1.2-1.4 kg/m² BMI reduction in overweight populations",
         keyFindings: [
@@ -112,7 +112,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "depression",
-        emoji: "🌟",
+        emoji: "✨",
         title: "Depression Symptom Reduction",
         description: "45% improvement in depression scores (HAM-D scale)",
         keyFindings: [
@@ -129,7 +129,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "cardiovascular",
-        emoji: "💓",
+        emoji: "🫀",
         title: "Cardiovascular Health",
         description: "6.2 bpm resting heart rate reduction (Cohen's d = 1.42)",
         keyFindings: [
@@ -146,7 +146,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "sleep",
-        emoji: "😴",
+        emoji: "💭",
         title: "Sleep Quality Improvement",
         description: "40% improvement in sleep quality scores at 4 weeks",
         keyFindings: [
@@ -165,7 +165,7 @@ const researchData: ResearchCategory[] = [
     },
     {
         id: "inflammation",
-        emoji: "🔥",
+        emoji: "🧬",
         title: "Inflammation Reduction",
         description: "Reduced TNF-α levels (significant p<0.05)",
         keyFindings: [
@@ -307,7 +307,7 @@ export default function ResearchPage() {
                                     <p className="text-sm text-teal-100 mb-4">Multiple RCTs, Large Effect Sizes</p>
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">❤️</span>
+                                            <span className="text-2xl">💗</span>
                                             <div>
                                                 <strong>Blood Pressure Reduction:</strong> 4-8 mmHg consistently
                                             </div>
@@ -319,13 +319,13 @@ export default function ResearchPage() {
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">🧘‍♀️</span>
+                                            <span className="text-2xl">🕉️</span>
                                             <div>
                                                 <strong>Anxiety Reduction:</strong> 40% symptom reduction
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">😴</span>
+                                            <span className="text-2xl">💭</span>
                                             <div>
                                                 <strong>Sleep Quality:</strong> 40% improvement in 4 weeks
                                             </div>
@@ -342,25 +342,25 @@ export default function ResearchPage() {
                                     <p className="text-sm text-teal-100 mb-4">Consistent positive outcomes</p>
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">🌟</span>
+                                            <span className="text-2xl">✨</span>
                                             <div>
                                                 <strong>Depression:</strong> 45% score improvement
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">⚖️</span>
+                                            <span className="text-2xl">⚗️</span>
                                             <div>
                                                 <strong>Weight Management:</strong> 1.2-1.4 kg/m² BMI reduction
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">💓</span>
+                                            <span className="text-2xl">🫀</span>
                                             <div>
                                                 <strong>Heart Rate Variability:</strong> Enhanced autonomic function
                                             </div>
                                         </li>
                                         <li className="flex items-start gap-2">
-                                            <span className="text-2xl">🔥</span>
+                                            <span className="text-2xl">🧬</span>
                                             <div>
                                                 <strong>Inflammation:</strong> Reduced inflammatory markers
                                             </div>

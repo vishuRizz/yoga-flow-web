@@ -28,7 +28,7 @@ const asanasData: Asana[] = [
         id: "tadasana",
         name: "Mountain Pose",
         sanskritName: "Tadasana",
-        emoji: "🧘",
+        emoji: "🪷",
         category: "Standing",
         difficulty: "Beginner",
         description: "The foundation of all standing poses, promoting proper posture and body awareness.",
@@ -54,7 +54,7 @@ const asanasData: Asana[] = [
         id: "vrksasana",
         name: "Tree Pose",
         sanskritName: "Vrksasana",
-        emoji: "🌳",
+        emoji: "🌲",
         category: "Standing",
         difficulty: "Beginner",
         description: "A balancing pose that strengthens legs and core while improving focus and concentration.",
@@ -80,7 +80,7 @@ const asanasData: Asana[] = [
         id: "virabhadrasana-1",
         name: "Warrior I",
         sanskritName: "Virabhadrasana I",
-        emoji: "⚔️",
+        emoji: "🗡️",
         category: "Standing",
         difficulty: "Intermediate",
         description: "A powerful standing pose that builds strength, stamina, and confidence.",
@@ -106,7 +106,7 @@ const asanasData: Asana[] = [
         id: "virabhadrasana-2",
         name: "Warrior II",
         sanskritName: "Virabhadrasana II",
-        emoji: "🗡️",
+        emoji: "🛡️",
         category: "Standing",
         difficulty: "Intermediate",
         description: "A grounding pose that builds strength and endurance while opening the hips.",
@@ -134,7 +134,7 @@ const asanasData: Asana[] = [
         id: "padmasana",
         name: "Lotus Pose",
         sanskritName: "Padmasana",
-        emoji: "🪷",
+        emoji: "🌸",
         category: "Seated",
         difficulty: "Advanced",
         description: "The classic meditation pose that calms the mind and opens the hips.",
@@ -160,7 +160,7 @@ const asanasData: Asana[] = [
         id: "baddha-konasana",
         name: "Butterfly Pose",
         sanskritName: "Baddha Konasana",
-        emoji: "🦋",
+        emoji: "🦚",
         category: "Seated",
         difficulty: "Beginner",
         description: "A gentle hip opener that stimulates abdominal organs and improves circulation.",
@@ -186,7 +186,7 @@ const asanasData: Asana[] = [
         id: "ardha-matsyendrasana",
         name: "Seated Twist",
         sanskritName: "Ardha Matsyendrasana",
-        emoji: "🔄",
+        emoji: "🌀",
         category: "Seated",
         difficulty: "Intermediate",
         description: "A spinal twist that energizes the spine and stimulates digestive organs.",
@@ -212,7 +212,7 @@ const asanasData: Asana[] = [
         id: "dandasana",
         name: "Staff Pose",
         sanskritName: "Dandasana",
-        emoji: "📐",
+        emoji: "🎋",
         category: "Seated",
         difficulty: "Beginner",
         description: "The foundation for seated poses, improving posture and core strength.",
@@ -240,7 +240,7 @@ const asanasData: Asana[] = [
         id: "bakasana",
         name: "Crow Pose",
         sanskritName: "Bakasana",
-        emoji: "🕊️",
+        emoji: "🪁",
         category: "Balancing",
         difficulty: "Advanced",
         description: "An arm balance that builds upper body strength and mental focus.",
@@ -266,7 +266,7 @@ const asanasData: Asana[] = [
         id: "garudasana",
         name: "Eagle Pose",
         sanskritName: "Garudasana",
-        emoji: "🦅",
+        emoji: "🦜",
         category: "Balancing",
         difficulty: "Intermediate",
         description: "A standing balance that improves focus while stretching shoulders and hips.",
@@ -292,7 +292,7 @@ const asanasData: Asana[] = [
         id: "ardha-chandrasana",
         name: "Half Moon Pose",
         sanskritName: "Ardha Chandrasana",
-        emoji: "🌙",
+        emoji: "🌛",
         category: "Balancing",
         difficulty: "Intermediate",
         description: "A standing balance that strengthens the entire body while improving coordination.",
@@ -320,7 +320,7 @@ const asanasData: Asana[] = [
         id: "bhujangasana",
         name: "Cobra Pose",
         sanskritName: "Bhujangasana",
-        emoji: "🐍",
+        emoji: "🐉",
         category: "Backbends",
         difficulty: "Beginner",
         description: "A gentle backbend that strengthens the spine and opens the chest.",
@@ -346,7 +346,7 @@ const asanasData: Asana[] = [
         id: "ustrasana",
         name: "Camel Pose",
         sanskritName: "Ustrasana",
-        emoji: "🐪",
+        emoji: "🏜️",
         category: "Backbends",
         difficulty: "Intermediate",
         description: "A deep backbend that opens the entire front body and energizes the spine.",
@@ -372,7 +372,7 @@ const asanasData: Asana[] = [
         id: "setu-bandhasana",
         name: "Bridge Pose",
         sanskritName: "Setu Bandhasana",
-        emoji: "🌉",
+        emoji: "⛩️",
         category: "Backbends",
         difficulty: "Beginner",
         description: "A gentle backbend that strengthens the back and opens the chest.",
@@ -398,7 +398,7 @@ const asanasData: Asana[] = [
         id: "dhanurasana",
         name: "Bow Pose",
         sanskritName: "Dhanurasana",
-        emoji: "🎯",
+        emoji: "🏹",
         category: "Backbends",
         difficulty: "Intermediate",
         description: "A deep backbend that stretches the entire front body and strengthens the back.",
@@ -426,7 +426,7 @@ const asanasData: Asana[] = [
         id: "adho-mukha-svanasana",
         name: "Downward Dog",
         sanskritName: "Adho Mukha Svanasana",
-        emoji: "🔻",
+        emoji: "⛰️",
         category: "Inversions",
         difficulty: "Beginner",
         description: "A foundational inversion that energizes the body while calming the mind.",
@@ -452,7 +452,7 @@ const asanasData: Asana[] = [
         id: "sarvangasana",
         name: "Shoulder Stand",
         sanskritName: "Sarvangasana",
-        emoji: "🙃",
+        emoji: "☯️",
         category: "Inversions",
         difficulty: "Advanced",
         description: "The 'queen of asanas' that benefits the entire body and calms the nervous system.",
@@ -478,7 +478,7 @@ const asanasData: Asana[] = [
         id: "balasana",
         name: "Child's Pose",
         sanskritName: "Balasana",
-        emoji: "💤",
+        emoji: "☁️",
         category: "Inversions",
         difficulty: "Beginner",
         description: "A restorative pose that gently stretches the back while calming the mind.",
@@ -550,8 +550,8 @@ export default function AsanasPage() {
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
                                     className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${selectedCategory === category
-                                            ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg scale-105"
-                                            : "bg-white text-teal-700 hover:bg-teal-50 border border-teal-200"
+                                        ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg scale-105"
+                                        : "bg-white text-teal-700 hover:bg-teal-50 border border-teal-200"
                                         }`}
                                 >
                                     {category}
@@ -608,7 +608,7 @@ export default function AsanasPage() {
                                             {/* Benefits */}
                                             <div>
                                                 <h4 className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2 flex items-center gap-2">
-                                                    ✨ Benefits
+                                                    ☀️ Benefits
                                                 </h4>
                                                 <ul className="space-y-1">
                                                     {asana.benefits.map((benefit, idx) => (
@@ -622,7 +622,7 @@ export default function AsanasPage() {
                                             {/* Instructions */}
                                             <div>
                                                 <h4 className="text-sm font-semibold text-teal-800 uppercase tracking-wide mb-2 flex items-center gap-2">
-                                                    📋 How to Practice
+                                                    📜 How to Practice
                                                 </h4>
                                                 <ol className="space-y-1">
                                                     {asana.instructions.map((instruction, idx) => (
@@ -636,7 +636,7 @@ export default function AsanasPage() {
                                             {/* Duration */}
                                             <div className="bg-cyan-50 rounded-lg p-3">
                                                 <p className="text-sm text-cyan-800">
-                                                    <span className="font-semibold">⏱️ Duration:</span> {asana.duration}
+                                                    <span className="font-semibold">⏳ Duration:</span> {asana.duration}
                                                 </p>
                                             </div>
 
@@ -644,7 +644,7 @@ export default function AsanasPage() {
                                             {asana.contraindications.length > 0 && (
                                                 <div className="bg-red-50 rounded-lg p-3 border-l-4 border-red-400">
                                                     <h4 className="text-sm font-semibold text-red-800 mb-1">
-                                                        ⚠️ Contraindications
+                                                        ☯️ Contraindications
                                                     </h4>
                                                     <p className="text-sm text-red-700">
                                                         Avoid if you have: {asana.contraindications.join(", ")}
